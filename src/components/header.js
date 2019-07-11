@@ -1,42 +1,61 @@
-import { Link } from "gatsby"
-import PropTypes from "prop-types"
-import React from "react"
+import React, { useState } from 'react';
+import { Link } from 'gatsby';
+import PropTypes from 'prop-types';
+import styled from '@emotion/styled';
+import { ReactComponent as MenuIcon } from '../assets/menu.svg';
 
-const Header = ({ siteTitle }) => (
-  <header
-    style={{
-      background: `rebeccapurple`,
-      marginBottom: `1.45rem`,
-    }}
-  >
-    <div
-      style={{
-        margin: `0 auto`,
-        maxWidth: 960,
-        padding: `1.45rem 1.0875rem`,
-      }}
-    >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
-          }}
-        >
-          {siteTitle}
-        </Link>
+const Header = ({ siteTitle }) => {
+  const [showMenu, setMenu] = useState(false);
+
+  return (
+    <SiteHeader>
+      <h1>
+        <Link to="/">{siteTitle}</Link>
       </h1>
-    </div>
-  </header>
-)
+      <button onClick={() => setMenu(!showMenu)}>
+        <MenuIcon />
+      </button>
+      {/* {showMenu ? <MobileMenu /> : null} */}
+    </SiteHeader>
+  );
+};
+
+// Styled Components
+
+const SiteHeader = styled.header`
+  margin-bottom: 30px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #e14141;
+
+  h1 {
+    margin: 0;
+    font-size: 25px;
+  }
+
+  a {
+    color: #fff;
+    text-decoration: none;
+  }
+
+  button {
+    padding: 0;
+    display: flex;
+    background: none;
+    border: none;
+  }
+`;
+
+// Prop Types
 
 Header.propTypes = {
-  siteTitle: PropTypes.string,
-}
+  siteTitle: PropTypes.string
+};
 
 Header.defaultProps = {
-  siteTitle: ``,
-}
+  siteTitle: ``
+};
 
-export default Header
+export default Header;

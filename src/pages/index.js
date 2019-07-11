@@ -1,21 +1,37 @@
-import React from "react"
-import { Link } from "gatsby"
+import React from 'react';
+import { Link } from 'gatsby';
 
-import Layout from "../components/layout"
-import Image from "../components/image"
-import SEO from "../components/seo"
+import Layout from '../components/layout';
+import Image from '../components/image';
+import SEO from '../components/seo';
 
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
-    </div>
-    <Link to="/page-2/">Go to page 2</Link>
+    <Image />
+    <h2 style={{ margin: `30px 0 15px` }}>Blog Post Title</h2>
+    <h4 style={{ color: `gray` }}>July 10, 2019</h4>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+      tempor incididunt ut labore et dolore magna aliqua.
+    </p>
+    <p>
+      {' '}
+      Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+      aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+      voluptate velit esse cillum dolore eu fugiat nulla pariatur
+    </p>
+    <p>
+      Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
+      doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo
+      inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
+      Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut
+      fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem
+      sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit
+      amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora
+      incidunt ut labore et dolore magnam aliquam quaerat voluptatem.
+    </p>
   </Layout>
-)
+);
 
-export default IndexPage
+export default IndexPage;
